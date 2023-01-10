@@ -28,9 +28,9 @@ export default function Contacts() {
       <ContactForm />
       <Filter />
       <h2 className="text-black text-lg mt-2 text-center">Contacts:</h2>
-      <ul className="inline-block border-2 rounded-lg p-1 border-gray-600 w-full">
-        {contacts.length > 0 &&
-          filterContacts(contacts).map((e) => (
+      {contacts.length > 0 && (
+        <ul className="inline-block border-2 rounded-lg p-1 border-gray-600 w-full">
+          {filterContacts(contacts).map((e) => (
             <li className="flex-row" key={e.id}>
               <div className="flex justify-between">
                 <span className="text-black text-lg">{e.name}</span>
@@ -44,7 +44,8 @@ export default function Contacts() {
               <div className="place-self-center">{e.number}</div>
             </li>
           ))}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 }

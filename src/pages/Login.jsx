@@ -23,7 +23,7 @@ export default function Login() {
         onSubmit={handleSubmit}
         className="border-2 rounded-lg p-2 border-gray-600 w-full"
       >
-        <p>email</p>
+        <p>Email</p>
         <input
           type="text"
           name="name"
@@ -32,7 +32,7 @@ export default function Login() {
           className="input input-sm w-full"
         />
 
-        <p>password</p>
+        <p>Password</p>
         <input
           type="text"
           name="name"

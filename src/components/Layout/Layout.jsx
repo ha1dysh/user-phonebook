@@ -10,17 +10,39 @@ export default function Layout() {
   const isLogged = useSelector(isLoggedIn);
   const user = useSelector(selectCurrentUser);
 
+  const activeLink =
+    "before:absolute before:top-6 before:w-full before:h-1 before:bg-cyan-500 before:rounded";
+
   return (
     <>
-      <header className="flex justify-between navbar bg-base-300">
-        <NavLink className="text-lg text-black" to="/">
+      <header className="flex justify-between navbar bg-base-300 rounded-b fixed">
+        <NavLink
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 text-xl" : "text-xl"
+          }
+          to="/"
+        >
           Contacts
         </NavLink>
 
         {!isLogged ? (
           <div className="flex justify-between w-32">
-            <NavLink to="/register">Register</NavLink>
-            <NavLink to="/login">Login</NavLink>
+            <div className="relative">
+              <NavLink
+                className={({ isActive }) => (isActive ? activeLink : "")}
+                to="/login"
+              >
+                Login
+              </NavLink>
+            </div>
+            <div className="relative">
+              <NavLink
+                className={({ isActive }) => (isActive ? activeLink : "")}
+                to="/register"
+              >
+                Register
+              </NavLink>
+            </div>
           </div>
         ) : (
           <div className="flex align-baseline">
@@ -36,7 +58,7 @@ export default function Layout() {
         )}
       </header>
 
-      <main className="bg-base-200 p-4">
+      <main className="bg-base-200 p-4 pt-24 h-screen">
         <Outlet />
       </main>
     </>

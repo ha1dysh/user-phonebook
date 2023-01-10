@@ -24,7 +24,7 @@ export default function Register() {
         onSubmit={handleSubmit}
         className="border-2 rounded-lg p-2 border-gray-600 w-full"
       >
-        <p>name</p>
+        <p>Name</p>
         <input
           type="text"
           name="name"
@@ -33,7 +33,7 @@ export default function Register() {
           className="input input-sm w-full"
         />
 
-        <p>email</p>
+        <p>Email</p>
         <input
           type="text"
           name="name"
@@ -42,7 +42,7 @@ export default function Register() {
           className="input input-sm w-full"
         />
 
-        <p>password</p>
+        <p>Password</p>
         <input
           type="password"
           name="name"
