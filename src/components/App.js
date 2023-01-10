@@ -49,6 +49,7 @@ export default function App() {
               </PublicRoute>
             }
           />
+          <Route path="*" element={Layout} />
         </Route>
       </Routes>
     )
